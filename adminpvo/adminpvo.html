@@ -1,0 +1,97 @@
+<html>
+    <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="estilos.css" />
+
+<body>
+
+    <div id="todo">
+
+            <div id="ingresoasesor">
+                
+                
+                    <img id="logotax" src="https://www.tax-individual.com.co/wp-content/themes/tax-individual/img/logo.png?v=2" alt="Logotipo-tax-individual" />
+                    <button id="btn_historial" > Historial <span class="fa fa-refresh"></span></button>
+
+                
+                
+                
+
+            </div >
+
+            <div id="listadoasesores" >
+                
+                <div id=contenedortabla>
+                    <div id="titulo_div"><h1 id="titulo">Listado PVO</h1></div>
+                    
+                    <table id="tabla_asesores">
+                      
+                    </table>
+                </div>
+
+            </div>
+
+            
+
+
+    </div>
+
+
+    <div id=contenedor_editar_box>
+    <div id="editar_box">
+    <p id="parrafo_editar">Nombre del lider que gestionó</p>
+    <select class='selectt' id="select_lider" value=""  ></select>
+    <input id="numeropvo" placeholder="Ingrese el número de la PVO"> </input>
+    <select class='selectt' id="select_pvo"  value=""  >
+        
+        <option disabled selected>¿PVO fue expedida en SAC?</option>
+        <option value="SI">SI</option>
+        <option value="NO">NO</option>
+    
+    </select>
+    <button id="btn_editar" > Guardar <span class="fa fa-refresh"></span></button>
+    
+    <button id="btn_editar_cerrar" onclick="ocultar_editar()"> Cancelar <span class="fa fa-close"></span></button>
+
+</div>
+</div>
+
+
+<div id=contenedor_modificar_box>
+    <div id="modificar_box">
+        <p id="parrafo_modificar">Editar datos de la PVO</p>
+        <textarea id="input_modificar" autocomplete="off" type="text" style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></textarea>
+        <button id="btn_modificar" > Confirmar <span class="fa fa-refresh"></span></button>
+        <button id="btn_modificar_cerrar" onclick="ocultar_modificar()"> Cancelar <span class="fa fa-close"></span></button>
+    
+    </div>
+    </div>
+
+</body>
+
+<footer>
+
+    <div id=footer>
+
+        <b style = "color: rgb(250, 199, 60)">Herramientas web SLT</b>
+        <p ><a style = "text-decoration: None" target="_blank" href="http://192.168.1.171:89/src/">Sistema de Gestión del Conocimiento SLT</a></p>
+        <p ><a style = "text-decoration: None" target="_blank" href="https://docs.google.com/spreadsheets/d/1rJ5e6K2_cj7zMx4BGs5ChumYwjcDES9e14GIOH8h3sk/edit#gid=1669431343">Desempeño de Asesores</a></p>
+        <p ><a style = "text-decoration: None" target="_blank" href="https://taxindividual.sharepoint.com/DOCS%20Profesional%20de%20Calidad%20SLT/Forms/AllItems.aspx?id=%2FDOCS%20Profesional%20de%20Calidad%20SLT%2FInstructivos%20SLT&p=true&originalPath=aHR0cHM6Ly90YXhpbmRpdmlkdWFsLnNoYXJlcG9pbnQuY29tLzpmOi9nL0VrbEpQcUlsZlAxTmxTRExBblNZVVJJQlczUld0c1FMM1FHZGpmN3dEeDZkMXc%5FcnRpbWU9eFJnOUFkQ1QyVWc">Instructivos</a></p>
+        <p> <span id='prueba' class="fa fa-taxi"></span> </p>
+
+    </div>
+
+</footer>
+
+ <!-- Conecto mi archivo de javascript donde cargaremos los scripts-->
+ 
+ <script src="jquery-3.6.0.js"></script>
+ <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/v4-shims.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/fontawesome.js"></script>
+ <script src="script.js"></script>
+ <script src="tableToExcel.js"></script>
+
+
+
+</html>
