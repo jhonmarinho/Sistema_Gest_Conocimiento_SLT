@@ -249,6 +249,29 @@ font-weight:700;
 
 }
 
+#note{
+  font-size:8px;
+  background-color: transparent;
+  border-color:rgb(209, 209, 209);
+  border-radius: 6px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  text-align: justify;
+  resize:none;
+  width: 95%;
+  font-family: "Century Gothic";
+  font-size: 9pt;
+  font-weight: 600;
+  padding:2.5%;
+  box-shadow: 0px 0px 10px rgb(184, 185, 185);
+  margin-left: -2%;
+  max-height: 300px;
+}
+
+.selectdate2{
+  font-size: 15px;
+  height: 10px;
+}
+
 #contenedorrespuestas{
   font-size:8px;
   background-color: transparent;
@@ -269,6 +292,7 @@ font-weight:700;
   max-height: 300px;
   
 }
+
 
 /* Estilos para la barra de scroll de resultados de la búsqueda motores Webkit y blink (Chrome, Safari, Opera... )*/
 
@@ -696,6 +720,7 @@ form.form_contact h2 {
 form.form_contact .user_info {
   display: flex;
   flex-direction: column;
+  
 }
 
 form.form_contact label {
@@ -805,7 +830,7 @@ form boton_de_link[type="submit"] {
   justify-content: center;
   align-items: center;
   background-color: #000000;
-  opacity: 80%;
+  opacity: 95%;
 }
 
 .mensaje_modal {
@@ -903,6 +928,75 @@ form boton_de_link[type="submit"] {
 
 .fa-window-close {
   font-size: 0px;
+}
+
+#form_pvo{
+
+max-height: 90%;
+max-width: 80%;
+  
+}
+
+#form_pvo label, input{
+
+margin: 0px;
+  
+}
+
+.row_data{
+
+  display: table;
+  width:100%;
+  table-layout: fixed;
+  
+}
+
+.column_data{
+  display: table-cell;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  
+}
+
+#btnClosePvo {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #771008;
+  color: #ffffff;
+  border: 2px solid  #771008;
+  border-radius: 30px;
+  cursor: pointer;
+  float: none;
+  font-weight: 600;
+  font-size: 14px;
+  width: 4%;
+  max-height:25px;
+  margin-right: 1%;
+}
+
+#btnSavePvo {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #185b9b;
+  color: #ffffff;
+  border: 2px solid  #185b9b;
+  border-radius: 30px;
+  cursor: pointer;
+  float: none;
+  font-weight: 600;
+  font-size: 14px;
+  width: 4%;
+  max-height:25px;
+  margin-left: 89%;
+}
+
+#btnClosePvo span{
+  margin-bottom: 100%;
+}
+
+#selectdate2{
+  font-size: 12px;
 }
 
 /* Ajustar a la pantalla items */

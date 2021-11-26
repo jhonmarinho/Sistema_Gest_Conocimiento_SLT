@@ -6,6 +6,8 @@ var contadorlupa = 1
 $(document).ready(function () {
   document.getElementById("formbuscadorweb").style.display='none';
   document.getElementById("formbuscadorslt").style.display='none';
+  document.getElementById("modal_pvo").style.display='none';
+
   //// Cuando da click en la lupa
 
 
@@ -306,8 +308,31 @@ $subtipif.addEventListener("change", function () {
   switch (valor1) {
     case "18-EXPEDIR PVO":
       ////MOSTRAR VENTANA
-      window.alert("It works!")
+      
+      document.getElementById("modal_pvo").style.display='';
 
+      let telefono_cond=document.getElementById("phone").value
+      let nombreconductor=document.getElementById("conductorname").value
+      let correo_cond=document.getElementById("correo").value
+      let placa_cond=document.getElementById("placa").value
+      
+      if (telefono_cond !== ""){
+        document.getElementById("tlf_conduc").value=telefono_cond
+      }
+
+      if (nombreconductor !== "NULL"){
+        document.getElementById("name_conduc").value=nombreconductor
+      }
+
+      if (correo_cond !== ""){
+        document.getElementById("email_conduc").value=correo_cond
+      }
+
+      if (placa_cond !== ""){
+        document.getElementById("placa_conduc").value=placa_cond
+      }
+      
+      
   }
 
 
@@ -469,6 +494,43 @@ $(document).ready(function () {
 
 function ocultarPVO() {
   $("#modal_wrap").hide(300);
+}
+
+function ocultardatosPVO() {
+  $("#modal_pvo").hide(300);
+  
+}
+
+function guardardatosPVO() {
+  
+  if(window.confirm("¿Confirma que desea guardar los datos ingresados?")){
+
+    $("#modal_pvo").hide(300);
+
+    let plantilla = "SOLICITUD PLANILLA DE VIAJE (PVO) " + "\n" +
+      "TELÉFONO CONDUCTOR: "+ $("#tlf_conduc").val() + "\n" +
+      "PLACA: "+  $("#placa_conduc").val() + "\n" +
+      "NOMBRE CONDUCTOR: " + $("#name_conduc").val() + "\n" +
+      "CORREO ELECTRÓNICO: " + $("#email_conduc").val() + "\n" +
+      "ORIGEN: " + $("#origin_conduc").val() + "\n" +
+      "DESTINO: " + $("#destination_conduc").val() + "\n" +
+      "NÚMERO USUARIOS: " + $("#number_passenger").val()  + "\n" +
+      "FECHA SALIDA: " + $("#date1_conduc").val() + "\n" +
+      "HORA VIAJE: " + $("#departure_conduc").val() + "\n" +
+      "FECHA REGRESO: " + $("#date2_conduc").val() + "\n" +
+      "IDA Y/O REGRESO: " + $("#selectdate2").val() + "\n" +
+      "CÉDULA CONTRATANTE: "  + $("#idcard_cont").val() + "\n" +
+      "NOMBRE CONTRATANTE: " + $("#name_cont").val() + "\n" +
+      "CELULAR: " + $("#phone_cont").val() + "\n" +
+      "DIRECCIÓN: " + $("#adress_cont").val() + "\n" +
+      "MUNICIPIO: " + $("#city_cont").val() + "\n" +
+      "Observaciones: " + $("#note").val() 
+
+    document.getElementById("mensaje").innerHTML=plantilla;
+
+  }
+  
+
 }
 
 

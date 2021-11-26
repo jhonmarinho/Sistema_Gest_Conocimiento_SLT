@@ -48,6 +48,115 @@
 
 <body>
 
+<!--Ventana de ingreso de datos de expedición PVO:-->
+
+<div id= "modal_pvo" class="modal_wrap">
+
+  <div id="form_pvo" class="mensaje_modal">
+ 
+  <div id="botones">
+    
+    <button onclick="guardardatosPVO()" id="btnSavePvo"><span id="spansave" class="fa fa-save"></span></button>
+    <button onclick="ocultardatosPVO()" id="btnClosePvo"><span id="spancerrar" class="fa fa-close"></span></button>
+</div>
+  
+    <h2 style="margin: 0px;text-align:left;padding-left:2%;"> Datos de Expedición P.V.O <span id="validarplanilla" class="fa fa-file-text-o"></span></h2>
+    <p style="font-size: 1em;text-align:left;padding-left:2%;">Diligencie correctamente a continuación, los datos de la PVO a expedir.</p>
+    
+
+    <div class="row_data" id="contenedor_datos">
+
+    <div class="column_data" id="datos_conductor">
+
+      <h4 style="margin-top:1px;color:#ad7c00;">Datos del conductor</h4>
+
+      <label id=lbl_tlf_conduc for="tlf_conduc">Teléfono conductor:</label>
+      <input maxlength="10" pattern="[0-9]{7}|[0-9]{10}" id="tlf_conduc" autocomplete="off" maxlength="10" required  oninvalid=null autocomplete="off" pattern=""  ></input>
+
+      <label id="lbl_placa_conduc"for="placa_conduc">Placa:</label>
+      <input id="placa_conduc"></input>
+
+      <label id="lbl_name_conduc"for="name_conduc">Nombre del conductor:</label>
+      <input style="font-size:14px" id="name_conduc"></input>
+
+      <label id="lbl_email_conduc"for="email_conduc">Correo electrónico:</label>
+      <input style="font-size:14px" id="email_conduc"></input>
+      </div>
+  <div class="column_data" id="datos_viaje">
+
+     <h4 style="margin-top:1px;color:#ad7c00;">Datos del viaje</h4>
+
+     <label id="lbl_number"for="number_passenger">Número de pasajeros:</label>
+    <input style="font-size:14px" id="number_passenger"></input>
+
+    <label id="lbl_origin_conduc"for="origin_conduc">Origen:</label>
+    <input style="font-size:14px" id="origin_conduc"></input>
+
+    <label id="lbl_destination_conduc"for="destination_conduc">Destino:</label>
+    <input style="font-size:14px" id="destination_conduc"></input>
+
+    <label id="lbl_date2_conduc"for="date2_conduc">Viaje de ida y regreso:</label>
+    <select  style="width:95%;text-align: center;font-size:15px;font-weight:600;" class="custom-select" id="selectdate2">
+
+      <option class="selectdate2"  value="" disabled selected>Seleccione</option>
+      <option class="selectdate2" value="SOLO IDA">SOLO IDA</option>
+      <option class="selectdate2" value="IDA Y REGRESO">IDA Y REGRESO</option>
+
+    </select>
+
+    <label id="lbl_date1_conduc"for="date1_conduc">Fecha de Salida:</label>
+    <input type="date" id="date1_conduc"></input>
+
+    <label id="lbl_departure_conduc"for="departure_conduc">Hora del viaje:</label>
+    <input  value="00:00" type="time" id="departure_conduc"></input>
+
+    <label id="lbl_date2_conduc"for="date2_conduc">Fecha de regreso:</label>
+    <input type="date" id="date2_conduc"></input>
+
+    
+
+</div>
+
+
+    <div class="column_data" id="datos_contratante">
+
+    <h4 style="margin-top:1px;color:#ad7c00;">Datos del contratante</h4>
+
+    <label id="lbl_idcard_cont"for="idcard_cont">Cédula del contratante</label>
+    <input id="idcard_cont"></input>
+
+    <label id="lbl_name_cont"for="name_cont">Nombre del contratante</label>
+    <input style="font-size:14px" id="name_cont"></input>
+
+    <label id="lbl_phone_cont"for="phone_cont">Teléfono del contratante</label>
+    <input id="phone_cont"></input>
+
+    <label id="lbl_adress_cont"for="adress_cont">Dirección</label>
+    <input style="font-size:14px" id="adress_cont"></input>
+
+    <label id="lbl_city_cont"for="city_cont">Municipio</label>
+    <input id="city_cont"></input>
+
+    <label for="note">Observaciones</label>
+    <textarea margin="0 px" rows="5" spellcheck="false"  id="note"></textarea>
+
+    </div>
+
+
+
+    
+</div>
+
+  
+
+    
+
+  </div>
+  
+</div>
+
+
+
 <!--Mensaje modal: Para modulo de consulta expedición PVO-->
 
 <div id= "modal_wrap" class="modal_wrap">
