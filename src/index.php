@@ -120,24 +120,24 @@
 
     <div class="column_data" id="datos_contratante">
 
-    <h4 style="margin-top:1px;color:#ad7c00;">Datos del contratante</h4>
+    <h4 style="margin-top:1px;color:#ad7c00;">Datos del contratante:</h4>
 
-    <label id="lbl_idcard_cont"for="idcard_cont">Cédula del contratante</label>
+    <label id="lbl_idcard_cont"for="idcard_cont">Cédula del contratante:</label>
     <input id="idcard_cont"></input>
 
-    <label id="lbl_name_cont"for="name_cont">Nombre del contratante</label>
+    <label id="lbl_name_cont"for="name_cont">Nombre del contratante:</label>
     <input style="font-size:14px" id="name_cont"></input>
 
-    <label id="lbl_phone_cont"for="phone_cont">Teléfono del contratante</label>
+    <label id="lbl_phone_cont"for="phone_cont">Teléfono del contratante:</label>
     <input id="phone_cont"></input>
 
-    <label id="lbl_adress_cont"for="adress_cont">Dirección</label>
+    <label id="lbl_adress_cont"for="adress_cont">Dirección:</label>
     <input style="font-size:14px" id="adress_cont"></input>
 
-    <label id="lbl_city_cont"for="city_cont">Municipio</label>
+    <label id="lbl_city_cont"for="city_cont">Municipio:</label>
     <input id="city_cont"></input>
 
-    <label for="note">Observaciones</label>
+    <label for="note">Observaciones:</label>
     <textarea margin="0 px" rows="5" spellcheck="false"  id="note"></textarea>
 
     </div>
