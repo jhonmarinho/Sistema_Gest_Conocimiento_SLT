@@ -238,12 +238,22 @@ async function editar() {
     array_ids.forEach(item => {
 
       variable_editar = "#editarid" + item.novedad_id
+      let variable_subtipif_PVO = "subtipif" + item.novedad_id
     
 
       //Escuchar que variable se ha seleccionado para editar
 
-      $(document).on("click", variable_editar, function (e) {
+      $(document).on("click", variable_editar, variable_subtipif_PVO, function (e) {
         window.scroll(0, 0);
+
+        var validador_PVO= document.getElementById(variable_subtipif_PVO).innerText
+        console.log(typeof(validador_PVO))
+        console.log(document.getElementById(variable_subtipif_PVO).innerText)
+        
+        if(validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE'){
+          $("#select_pvo").hide()
+          
+        }
 
         console.log("Usted ha seleccionado *guardar* la PVO de la placa " + item.placa + " con ID: " + item.novedad_id);
       
