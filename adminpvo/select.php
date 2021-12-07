@@ -11,7 +11,7 @@ if(isset($_POST['search'])){
 
     if (!empty($search)){
 
-    $query1 = "SELECT * FROM dbo.reg_llam_conduct WHERE gestionado = 'NO' AND (subtipif LIKE '%21%' OR subtipif LIKE '%18%' OR subtipif LIKE '%19%')  ORDER BY novedad_id desc; 
+    $query1 = "SELECT * FROM dbo.reg_llam_conduct WHERE gestionado = 'NO' AND (subtipif LIKE '21%' OR subtipif LIKE '18%' OR subtipif LIKE '19%')  ORDER BY novedad_id desc; 
      ";
     $result = sqlsrv_query($conectar, $query1);
     if (!$result) {
