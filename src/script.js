@@ -7,6 +7,8 @@ $(document).ready(function () {
   document.getElementById("formbuscadorweb").style.display='none';
   document.getElementById("formbuscadorslt").style.display='none';
   document.getElementById("modal_pvo").style.display='none';
+  
+ // $("#contenedorchat").animate({ scrollTop: (body).height() }, 1000); // Scrollea hasta abajo de la página 
 
   //// Cuando da click en la lupa
 
@@ -280,6 +282,7 @@ let subtipificaciones = [
   "35-SUGERENCIA",
   "36-FELICITACION",
   "37-ACTUALIZACION DE DATOS CONDUCTOR",
+  "38-ACTUALIZACION TARIFAS SERVICIO TAXI 2021-2022",
 ];
 
 function mostrartipif(arreglo, tipifosubtipif) {
@@ -369,7 +372,7 @@ $tipif.addEventListener("change", function () {
       recortarx(subtipificaciones, 34, 37, $subtipif);
       break;
     case "8 ACTUALIZACION DE DATOS":
-      recortarx(subtipificaciones, 37, 38, $subtipif);
+      recortarx(subtipificaciones, 37, 39, $subtipif);
       break
   }
 });
@@ -482,8 +485,9 @@ $('#placa').keyup(function (e) {
 $(document).ready(function () {
   $("#validarplanilla").click(function () {
 
-    //Mostrando ventana de requisitos expedición de P.V.O
+    window.alert("it works")
 
+    //Mostrando ventana de requisitos expedición de P.V.O
     document.getElementById("modal_wrap").style.display = '';
 
   });
