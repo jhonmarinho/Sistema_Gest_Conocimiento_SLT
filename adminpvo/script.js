@@ -262,45 +262,71 @@ async function editar() {
           let numeropvo1=document.getElementById("numeropvo").value
           let sac=document.getElementById("select_pvo").value
 
-          if (numeropvo1 != '' && sac != '¿PVO fue expedida en SAC?' ) {  
+          function almacenar(){
 
-
-          let actualizadoname = document.getElementById("select_lider").value
-          console.log(actualizadoname)
-        
-          let numeropvo=document.getElementById("numeropvo").value
-          let expedida_sac=document.getElementById("select_pvo").value
-          
-          $.ajax({
-            url: 'guardar.php',
-            data: {
-              'id': item.novedad_id,
-              'actualizadoname': actualizadoname,
-              'numeropvo': numeropvo,
-              'expedida_sac': expedida_sac,
-            },
-            type: 'POST',
-            success: function (response) {
-              if (response == "exitoso") {
-                window.alert("PVO de la placa *" + item.placa + "* ingresada por el asesor " + actualizadoname + " , GUARDADA correctamente! ✅")
-                
-                $("#contenedor_editar_box").css("display", "none");
-                window. location. reload()
-              }
-              else {
-                window.alert("Error al intentar gestionar la PVO")
-                $("#contenedor_editar_box").css("display", "none");
-              }
+              let actualizadoname = document.getElementById("select_lider").value
+              console.log(actualizadoname)
+            
+              let numeropvo=document.getElementById("numeropvo").value
+              let expedida_sac=document.getElementById("select_pvo").value
+              
+              $.ajax({
+                url: 'guardar.php',
+                data: {
+                  'id': item.novedad_id,
+                  'actualizadoname': actualizadoname,
+                  'numeropvo': numeropvo,
+                  'expedida_sac': expedida_sac,
+                },
+                type: 'POST',
+                success: function (response) {
+                  if (response == "exitoso") {
+                    window.alert("PVO de la placa *" + item.placa + "* ingresada por el asesor " + actualizadoname + " , GUARDADA correctamente! ✅")
+                    
+                    $("#contenedor_editar_box").css("display", "none");
+                    window. location. reload()
+                  }
+                  else {
+                    window.alert("Error al intentar gestionar la PVO")
+                    $("#contenedor_editar_box").css("display", "none");
+                  }
+    
+                }
+    
+    
+              });
 
             }
 
 
-          });
+
+         
+
+          if (numeropvo1 != '' && sac != '¿PVO fue expedida en SAC?' ) {  
+
+                      
+          almacenar()
 
         }
 
         else {
-          window.alert("Por favor, ingrese el número de la PVO y seleccione si fue expedida o no en SAC.") 
+
+          if(validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE'){           
+            
+            if (numeropvo1 != '' ) { 
+            
+            almacenar()}
+
+            else{window.alert("Por favor, ingrese el número de la PVO") }
+          }
+
+          else{  
+            window.alert("Por favor, ingrese el número de la PVO y seleccione si fue expedida o no en SAC.") 
+          }
+
+       
+
+          
         }
 
         });
