@@ -4,6 +4,10 @@
   
 }
 
+.contenedor2{
+  min-height: 100%;
+}
+
 .time_stamp{
   font-size: 75%;
   margin: 0px; 
@@ -331,6 +335,7 @@ font-weight:700;
 #contenedorchat::-webkit-scrollbar:vertical {
   width:10px;
   padding-bottom:5%;
+  text-align: end;
 }
 
 #contenedorchat::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
@@ -604,7 +609,6 @@ body {
 
 .form_wrap {
   width: 70%;
-  height: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
   margin-left: 4%;
@@ -833,7 +837,29 @@ form boton_de_link[type="submit"] {
   opacity: 95%;
 }
 
+#modal_wrap1 {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  opacity: 95%;
+}
+
 .mensaje_modal {
+  background: #ffffff;
+  box-shadow: 0px 0px 15px #767676;
+  padding: 25px 20px 15px;
+  border-radius: 15px;
+  opacity: 100%;
+}
+
+.mensaje_modal1 {
   background: #ffffff;
   box-shadow: 0px 0px 15px #767676;
   padding: 25px 20px 15px;
@@ -855,7 +881,35 @@ form boton_de_link[type="submit"] {
   text-transform: uppercase;
   text-align: center;
 }
+
+.mensaje_modal1 input {
+  width: 95%;
+  padding: 1px 0px 1px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  border: none;
+  border-bottom: 2px solid rgb(209, 209, 209);
+  font-family: "Century Gothic";
+  color: #3b3c49;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
 .mensaje_modal label {
+ 
+  margin-top: 3%;
+  font-size: 15px;
+  color: rgb(61, 61, 61);
+  padding: 3px;
+  margin-left: 10px;
+  display: block;
+  font-family: "Century Gothic";
+}
+
+.mensaje_modal1 label {
  
   margin-top: 3%;
   font-size: 15px;
@@ -871,6 +925,10 @@ form boton_de_link[type="submit"] {
 }
 
 .mensaje_modal {
+  transition: 1000ms linear;
+}
+
+.mensaje_modal1 {
   transition: 1000ms linear;
 }
 
@@ -924,6 +982,21 @@ form boton_de_link[type="submit"] {
   float: none;
   font-weight: 600;
   font-size: 14px;
+}
+
+.mensaje_modal1 #btnClose {
+  position: relative;
+  padding: 3px 10px;
+  margin-top: 10px;
+  background: #d49800;
+  color: #000000;
+  border: 2px solid #d49800;
+  border-radius: 20px;
+  cursor: pointer;
+  float: none;
+  font-weight: 600;
+  font-size: 14px;
+
 }
 
 .fa-window-close {
@@ -1019,7 +1092,6 @@ margin: 0px;
 
   .form_wrap {
     width: 80%;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
     background: white;
@@ -1077,7 +1149,6 @@ margin: 0px;
 
   .form_wrap {
     width: 110%;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
     background: white;

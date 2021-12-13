@@ -60,7 +60,7 @@
     <button onclick="ocultardatosPVO()" id="btnClosePvo"><span id="spancerrar" class="fa fa-close"></span></button>
 </div>
   
-    <h2 style="margin: 0px;text-align:left;padding-left:2%;"> Datos de Expedición P.V.O <span id="validarplanilla" class="fa fa-file-text-o"></span></h2>
+    <h2 style="margin: 0px;text-align:left;padding-left:2%;"> Datos de Expedición P.V.O <span class="fa fa-file-text-o"></span></h2>
     <p style="font-size: 1em;text-align:left;padding-left:2%;">Diligencie correctamente a continuación, los datos de la PVO a expedir.</p>
     
 
@@ -159,9 +159,9 @@
 
 <!--Mensaje modal: Para modulo de consulta expedición PVO-->
 
-<div id= "modal_wrap" class="modal_wrap">
+<div id= "modal_wrap1" >
 
-  <div class="mensaje_modal">
+  <div class="mensaje_modal1">
 
 
     <h2> Requisitos Expedición P.V.O</h2>
@@ -353,7 +353,7 @@
                                 
               </select>
 
-              <label for="placa">Placa del vehículo* <span id="validarplanilla" class="fa fa-file-text-o"></span></label> 
+              <label for="placa">Placa del vehículo* <span id="spandocument" class="fa fa-file-text-o"></span></label> 
               
               <input id="placa" maxlength="6" required name="placa" oninvalid=null autocomplete="off" pattern="[A-Z]{3}[0-9]{3}|[a-zA-Z]{3}[0-9]{3}" onkeydown="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" />
               

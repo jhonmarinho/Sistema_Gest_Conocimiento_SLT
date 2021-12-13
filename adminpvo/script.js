@@ -1,8 +1,8 @@
 /////variables globales
 let data
 let array_ids = [];
-let elementoHtml 
-let texto 
+let elementoHtml
+let texto
 
 //////////////////////////
 
@@ -10,12 +10,12 @@ let texto
 
 $(document).ready(function () {
 
-  let elementos = '<option selected value="">--Seleccione--</option>'+'<option value="VICTOR MANUEL DUQUE GUERRERO">VICTOR MANUEL DUQUE GUERRERO</option>'+ '<option   value="JUAN SEBASTIAN MORENO RAMIREZ">JUAN SEBASTIAN MORENO RAMIREZ</option>'+'<option value="DANER ESNEIDER OSORIO OSORIO">DANER ESNEIDER OSORIO OSORIO</option>'+ '<option   value="ALEXANDER CUADROS GALLEGO">ALEXANDER CUADROS GALLEGO</option>'+'<option value="CARLOS DANIEL CORREA JIMENEZ">CARLOS DANIEL CORREA JIMENEZ</option>'+ '<option   value="GILMER CAMILO RIOS BUSTAMANTE">GILMER CAMILO RIOS BUSTAMANTE</option>'+'<option value="ARIEL DE LA ROSA REALES">ARIEL DE LA ROSA REALES</option>'+ '<option   value="EDDY SANTIAGO MUÑOZ MAZO">EDDY SANTIAGO MUÑOZ MAZO</option>'+'<option value="DAVID ESTEBAN CANO CASTRILLON">DAVID ESTEBAN CANO CASTRILLON</option>'+'<option   value="DANIEL ALEJANDRO ESPINOSA">DANIEL ALEJANDRO ESPINOSA</option>'+'<option value="EDY SANTIAGO FRANCO ROJAS">EDY SANTIAGO FRANCO ROJAS</option>'+'<option value="JOHN STIVEN TAPIAS CALLE">JOHN STIVEN TAPIAS CALLE</option>'+'<option value="LINA MARIA CANO ARBELÁEZ">LINA MARIA CANO ARBELÁEZ</option>'+'<option   value="LEONARDO ANTONIO RENDÓN">LEONARDO ANTONIO RENDÓN</option>'+'<option value="GABRIEL JAIME PEREZ">GABRIEL JAIME PEREZ</option>';
-    document.getElementById("select_lider").innerHTML = elementos
+  let elementos = '<option selected value="">--Seleccione--</option>' + '<option value="VICTOR MANUEL DUQUE GUERRERO">VICTOR MANUEL DUQUE GUERRERO</option>' + '<option   value="JUAN SEBASTIAN MORENO RAMIREZ">JUAN SEBASTIAN MORENO RAMIREZ</option>' + '<option value="DANER ESNEIDER OSORIO OSORIO">DANER ESNEIDER OSORIO OSORIO</option>' + '<option   value="ALEXANDER CUADROS GALLEGO">ALEXANDER CUADROS GALLEGO</option>' + '<option value="CARLOS DANIEL CORREA JIMENEZ">CARLOS DANIEL CORREA JIMENEZ</option>' + '<option   value="GILMER CAMILO RIOS BUSTAMANTE">GILMER CAMILO RIOS BUSTAMANTE</option>' + '<option value="ARIEL DE LA ROSA REALES">ARIEL DE LA ROSA REALES</option>' + '<option   value="EDDY SANTIAGO MUÑOZ MAZO">EDDY SANTIAGO MUÑOZ MAZO</option>' + '<option value="DAVID ESTEBAN CANO CASTRILLON">DAVID ESTEBAN CANO CASTRILLON</option>' + '<option   value="DANIEL ALEJANDRO ESPINOSA">DANIEL ALEJANDRO ESPINOSA</option>' + '<option value="EDY SANTIAGO FRANCO ROJAS">EDY SANTIAGO FRANCO ROJAS</option>' + '<option value="JOHN STIVEN TAPIAS CALLE">JOHN STIVEN TAPIAS CALLE</option>' + '<option value="LINA MARIA CANO ARBELÁEZ">LINA MARIA CANO ARBELÁEZ</option>' + '<option   value="LEONARDO ANTONIO RENDÓN">LEONARDO ANTONIO RENDÓN</option>' + '<option value="GABRIEL JAIME PEREZ">GABRIEL JAIME PEREZ</option>';
+  document.getElementById("select_lider").innerHTML = elementos
 
   $("#contenedor_editar_box").css("display", "none");
   $("#contenedor_modificar_box").css("display", "none");
- 
+
   refrescar();
 })
 
@@ -59,8 +59,8 @@ function refrescar() {
           let subtipif1 = (data.subtipif)
           let mensaje1 = (data.mensaje)
           let correo1 = (data.correo)
-          
-          array_ids.push({ "novedad_id": variable.toString(), "placa": placa1, "mensaje":mensaje1})
+
+          array_ids.push({ "novedad_id": variable.toString(), "placa": placa1, "mensaje": mensaje1 })
 
           items1 += `<tr>
 
@@ -119,51 +119,51 @@ function resolveAfter2Seconds() {
 
 ///FUNCIÓN COLOREAR////
 
-  ///// Consultar si hay celdas resaltadas en la base de datos
+///// Consultar si hay celdas resaltadas en la base de datos
 
-  async function colorear(){
+async function colorear() {
 
-    const result = await resolveAfter1Seconds();
-    let search4=""
+  const result = await resolveAfter1Seconds();
+  let search4 = ""
 
-    array_ids.forEach(item => {
-      
-      $.ajax({
-        url: 'colorear.php',
-        data: item.novedad_id,
-        type: 'POST',
-        async: false,
-        success: function (response) {
+  array_ids.forEach(item => {
 
-          console.log("Este es el response de colorear")
-          console.log("response: "+response+" Tipo de response: "+typeof(response))
+    $.ajax({
+      url: 'colorear.php',
+      data: item.novedad_id,
+      type: 'POST',
+      async: false,
+      success: function (response) {
 
-          let elementohtml=document.getElementById("mensaje"+item.novedad_id)
-                   
-                  if(response==="rgb(224, 181, 64)"){
-                    elementohtml.style.backgroundColor =  "rgb(224, 181, 64)"
-                  }
+        console.log("Este es el response de colorear")
+        console.log("response: " + response + " Tipo de response: " + typeof (response))
 
-                  else{
-                    
-                    elementohtml.style.backgroundColor =  "rgba(0, 0, 0, 0.0)"
-                                      
-                  }
-                  
+        let elementohtml = document.getElementById("mensaje" + item.novedad_id)
+
+        if (response === "rgb(224, 181, 64)") {
+          elementohtml.style.backgroundColor = "rgb(224, 181, 64)"
+        }
+
+        else {
+
+          elementohtml.style.backgroundColor = "rgba(0, 0, 0, 0.0)"
 
         }
 
 
-      });
-
-})
-
-  }
-
-  
+      }
 
 
-  /////
+    });
+
+  })
+
+}
+
+
+
+
+/////
 
 
 
@@ -172,7 +172,7 @@ function resolveAfter2Seconds() {
 async function eliminar() {
 
   const result = await resolveAfter1Seconds();
-  
+
 
   //Función eliminar
   if (array_ids !== 0) {
@@ -188,30 +188,30 @@ async function eliminar() {
 
       $(document).on("click", variable_eliminar, function (e) {
 
-        console.log("Usted ha seleccionado *colorear* la PVO de la placa "+ item.placa+" con id: " + item.novedad_id);
+        console.log("Usted ha seleccionado *colorear* la PVO de la placa " + item.placa + " con id: " + item.novedad_id);
 
 
-          let search2 = item.novedad_id
-          let elementohtml=document.getElementById("mensaje"+search2)
-          let elementStyle = window.getComputedStyle(elementohtml);
-          let elementColor = elementStyle.getPropertyValue('background-color');
-          
+        let search2 = item.novedad_id
+        let elementohtml = document.getElementById("mensaje" + search2)
+        let elementStyle = window.getComputedStyle(elementohtml);
+        let elementColor = elementStyle.getPropertyValue('background-color');
 
-          if(elementColor==="rgb(224, 181, 64)"){
-            elementohtml.style.backgroundColor =  "rgba(0, 0, 0, 0.0)"
-          }
 
-          else{
-            
-            elementohtml.style.backgroundColor =  "rgb(224, 181, 64)"
-            console.log("por aqui entro")
-            console.log(elementColor)
-          
-          }
-                
-          
-        
-        
+        if (elementColor === "rgb(224, 181, 64)") {
+          elementohtml.style.backgroundColor = "rgba(0, 0, 0, 0.0)"
+        }
+
+        else {
+
+          elementohtml.style.backgroundColor = "rgb(224, 181, 64)"
+          console.log("por aqui entro")
+          console.log(elementColor)
+
+        }
+
+
+
+
 
       });
 
@@ -239,95 +239,96 @@ async function editar() {
 
       variable_editar = "#editarid" + item.novedad_id
       let variable_subtipif_PVO = "subtipif" + item.novedad_id
-    
+
 
       //Escuchar que variable se ha seleccionado para editar
 
       $(document).on("click", variable_editar, variable_subtipif_PVO, function (e) {
         window.scroll(0, 0);
 
-        var validador_PVO= document.getElementById(variable_subtipif_PVO).innerText
-        console.log(typeof(validador_PVO))
+        var validador_PVO = document.getElementById(variable_subtipif_PVO).innerText
+        console.log(typeof (validador_PVO))
         console.log(document.getElementById(variable_subtipif_PVO).innerText)
-        
-        if(validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE'){
+
+        if (validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE') {
           $("#select_pvo").hide()
-          
+
         }
 
         console.log("Usted ha seleccionado *guardar* la PVO de la placa " + item.placa + " con ID: " + item.novedad_id);
-      
+
         $(btn_editar).click(function () {
 
-          let numeropvo1=document.getElementById("numeropvo").value
-          let sac=document.getElementById("select_pvo").value
+          let numeropvo1 = document.getElementById("numeropvo").value
+          let sac = document.getElementById("select_pvo").value
 
-          function almacenar(){
+          function almacenar() {
 
-              let actualizadoname = document.getElementById("select_lider").value
-              console.log(actualizadoname)
-            
-              let numeropvo=document.getElementById("numeropvo").value
-              let expedida_sac=document.getElementById("select_pvo").value
-              
-              $.ajax({
-                url: 'guardar.php',
-                data: {
-                  'id': item.novedad_id,
-                  'actualizadoname': actualizadoname,
-                  'numeropvo': numeropvo,
-                  'expedida_sac': expedida_sac,
-                },
-                type: 'POST',
-                success: function (response) {
-                  if (response == "exitoso") {
-                    window.alert("PVO de la placa *" + item.placa + "* ingresada por el asesor " + actualizadoname + " , GUARDADA correctamente! ✅")
-                    
-                    $("#contenedor_editar_box").css("display", "none");
-                    window. location. reload()
-                  }
-                  else {
-                    window.alert("Error al intentar gestionar la PVO")
-                    $("#contenedor_editar_box").css("display", "none");
-                  }
-    
+            let actualizadoname = document.getElementById("select_lider").value
+            console.log(actualizadoname)
+
+            let numeropvo = document.getElementById("numeropvo").value
+            let expedida_sac = document.getElementById("select_pvo").value
+
+            $.ajax({
+              url: 'guardar.php',
+              data: {
+                'id': item.novedad_id,
+                'actualizadoname': actualizadoname,
+                'numeropvo': numeropvo,
+                'expedida_sac': expedida_sac,
+              },
+              type: 'POST',
+              success: function (response) {
+                if (response == "exitoso") {
+                  window.alert("PVO de la placa *" + item.placa + "* ingresada por el asesor " + actualizadoname + " , GUARDADA correctamente! ✅")
+
+                  $("#contenedor_editar_box").css("display", "none");
+                  window.location.reload()
                 }
-    
-    
-              });
+                else {
+                  window.alert("Error al intentar gestionar la PVO")
+                  $("#contenedor_editar_box").css("display", "none");
+                }
 
+              }
+
+
+            });
+
+          }
+
+
+
+
+
+          if (numeropvo1 != '' && sac != '¿PVO fue expedida en SAC?') {
+
+
+            almacenar()
+
+          }
+
+          else {
+
+            if (validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE') {
+
+              if (numeropvo1 != '') {
+
+                almacenar()
+              }
+
+              else { window.alert("Por favor, ingrese el número de la PVO") }
+            }
+
+            else {
+              window.alert("Por favor, ingrese el número de la PVO y seleccione si fue expedida o no en SAC.")
             }
 
 
 
-         
 
-          if (numeropvo1 != '' && sac != '¿PVO fue expedida en SAC?' ) {  
-
-                      
-          almacenar()
-
-        }
-
-        else {
-
-          if(validador_PVO == '19-MODIFICAR PVO' || validador_PVO == '21-FINALIZAR PVO ANTICIPADAMENTE'){           
-            
-            if (numeropvo1 != '' ) { 
-            
-            almacenar()}
-
-            else{window.alert("Por favor, ingrese el número de la PVO") }
           }
-
-          else{  
-            window.alert("Por favor, ingrese el número de la PVO y seleccione si fue expedida o no en SAC.") 
-          }
-
-       
-
-          
-        }
 
         });
 
@@ -340,7 +341,7 @@ async function editar() {
 
       });
     });
-    
+
   }
 };
 
@@ -372,7 +373,7 @@ async function modificar() {
     array_ids.forEach(item => {
 
       variable_modificar = "#modificarid" + item.novedad_id
-    
+
 
       //Escuchar que variable se ha seleccionado para editar
 
@@ -380,12 +381,12 @@ async function modificar() {
         window.scroll(0, 0);
 
         console.log("Usted ha seleccionado *modificar* la PVO de la placa " + item.placa + " con ID: " + item.novedad_id);
-      
+
         $(btn_modificar).click(function () {
-          let mensaje2=document.getElementById("input_modificar").value
+          let mensaje2 = document.getElementById("input_modificar").value
 
           console.log(mensaje2)
-                  
+
           $.ajax({
             url: 'modificar.php',
             data: {
@@ -397,9 +398,9 @@ async function modificar() {
             success: function (response) {
               if (response == "exitoso") {
                 window.alert("PVO de la placa *" + item.placa + ", MODIFICADA correctamente! ✅")
-                
+
                 $("#contenedor_modificar_box").css("display", "none");
-                window. location. reload()
+                window.location.reload()
               }
               else {
                 window.alert("Error al intentar modificar la PVO")
@@ -423,7 +424,7 @@ async function modificar() {
 
       });
     });
-    
+
   }
 };
 ///////////////////////////////////
@@ -434,115 +435,115 @@ async function modificar() {
 
 ///FUNCIÓN COLOREAR////
 
-  ///// Consultar si hay celdas resaltadas en la base de datos
+///// Consultar si hay celdas resaltadas en la base de datos
 
-  async function deleter(){
+async function deleter() {
 
-    const result = await resolveAfter1Seconds();
-    console.log(result);
-  
-    if (array_ids !== 0) {
-  
-      let variable_deleter = ""
-  
-      array_ids.forEach(item => {
-  
-        variable_deleter = "#deleteid" + item.novedad_id
-      
-  
-        //Escuchar que variable se ha seleccionado para editar
-  
-        $(document).on("click", variable_deleter, function (e) {
-          window.scroll(0, 0);
-          
-          let mssg= "⚠️ATENCIÓN⚠️\n - Solo elimine registros erróneos o que no necesiten gestión. \n" + "\nUsted ha seleccionado eliminar la PVO de la placa " + item.placa + " con ID: " + item.novedad_id + " ¿Desea continuar?"
-          console.log(mssg);
+  const result = await resolveAfter1Seconds();
+  console.log(result);
 
-          if(window.confirm(mssg)){
+  if (array_ids !== 0) {
 
-            let search5 = item.novedad_id
+    let variable_deleter = ""
 
-            $.ajax({
-              url: 'deleter.php',
-              data: {search5},
-              type: 'POST',
-              success: function (response) {
-                
-                if (response == "exitoso") {
-                  window.alert("PVO de la placa *" + item.placa + ", ELIMINADA correctamente! ✅")
-                  window. location. reload()
+    array_ids.forEach(item => {
 
-                }
-                else {
-                  window.alert("Error al intentar eliminar la PVO")
-                }
-  
+      variable_deleter = "#deleteid" + item.novedad_id
+
+
+      //Escuchar que variable se ha seleccionado para editar
+
+      $(document).on("click", variable_deleter, function (e) {
+        window.scroll(0, 0);
+
+        let mssg = "⚠️ATENCIÓN⚠️\n - Solo elimine registros erróneos o que no necesiten gestión. \n" + "\nUsted ha seleccionado eliminar la PVO de la placa " + item.placa + " con ID: " + item.novedad_id + " ¿Desea continuar?"
+        console.log(mssg);
+
+        if (window.confirm(mssg)) {
+
+          let search5 = item.novedad_id
+
+          $.ajax({
+            url: 'deleter.php',
+            data: { search5 },
+            type: 'POST',
+            success: function (response) {
+
+              if (response == "exitoso") {
+                window.alert("PVO de la placa *" + item.placa + ", ELIMINADA correctamente! ✅")
+                window.location.reload()
+
               }
-  
-  
-            });
+              else {
+                window.alert("Error al intentar eliminar la PVO")
+              }
+
+            }
+
+
+          });
 
 
 
 
-          }
+        }
 
-  
-        });
+
       });
-      
-    }
+    });
 
   }
 
-  
+}
+
+
 /////////////////////////////////////////////////////////////////////////
 
 /// Click btn historial
 let contador = 0
-$(btn_historial).click(function () {    
+$(btn_historial).click(function () {
 
-      if(contador===0){
-        elementoHtml = document.createElement("span");
-        texto = document.createElement("h1")
-        texto.setAttribute("id","id_texto")
-        texto.setAttribute("style","font-size:500px")
-      
-      elementoHtml.setAttribute("class", "fa fa-file-excel")
-      elementoHtml.setAttribute("style", "color:green;display:flex;margin-left:95%;hover:")
-      elementoHtml.setAttribute("id", "span_excel")
-      elementoHtml.setAttribute("tittle", "Exportar a Excel")
-      
-      document.getElementById("tabla_asesores").innerHTML = '';
-      contador=contador+1;
-      console.log(contador)
-      document.getElementById("btn_historial").innerHTML="Volver"
-      document.getElementById("titulo").innerHTML="Histórico PVO";
-      
+  if (contador === 0) {
+    elementoHtml = document.createElement("span");
+    texto = document.createElement("h1")
+    texto.setAttribute("id", "id_texto")
+    texto.setAttribute("style", "font-size:500px")
 
- 
-      document.getElementById("titulo_div").appendChild(elementoHtml)
-      document.getElementById("contenedortabla").style.cssText = 'background: rgba(0, 0, 0, 0.5) '
-      document.getElementById("tabla_asesores").style.cssText = 'color: white;'
-      document.getElementById("titulo").style.cssText = 'color: white;'
-      document.getElementById("listadoasesores").style.cssText = 'background-image: url("imagenes/descarga2.jpg");'
-      
+    elementoHtml.setAttribute("class", "fa fa-file-excel")
+    elementoHtml.setAttribute("style", "color:green;display:flex;margin-left:95%;hover:")
+    elementoHtml.setAttribute("id", "span_excel")
+    elementoHtml.setAttribute("tittle", "Exportar a Excel")
 
-      
-      
-      
-      search = "4 PVO"
-      $.ajax({
-        url: 'historico.php',
-        data: { search },
-        type: 'POST',
-        success: function (response) {
-    
-          if (response !== "[]") {
-            
-            data = JSON.parse(response);
-    
-            let items2 = `<tr> 
+    document.getElementById("tabla_asesores").innerHTML = '';
+    contador = contador + 1;
+    console.log(contador)
+    document.getElementById("btn_historial").innerHTML = "Volver"
+    document.getElementById("titulo").innerHTML = "Histórico PVO";
+
+
+
+    document.getElementById("titulo_div").appendChild(elementoHtml)
+    document.getElementById("contenedortabla").style.cssText = 'background: rgba(0, 0, 0, 0.5) '
+    document.getElementById("tabla_asesores").style.cssText = 'color: white;'
+    document.getElementById("titulo").style.cssText = 'color: white;'
+    document.getElementById("listadoasesores").style.cssText = 'background-image: url("imagenes/descarga2.jpg");'
+
+
+
+
+
+    search = "4 PVO"
+    $.ajax({
+      url: 'historico.php',
+      data: { search },
+      type: 'POST',
+      success: function (response) {
+
+        if (response !== "[]") {
+
+          data = JSON.parse(response);
+
+          let items2 = `<tr> 
             <th id="th1" class="angosto" align="center" style = "font-weight: bold; color: white;"> # </th>
             <th id="th2" class="angosto" align="center" style = "font-weight: bold; color: white;"> fecha </th>
             <th id="th3" class="angosto" align="center" style = "font-weight: bold; color: white;"> asesor </th>
@@ -553,26 +554,26 @@ $(btn_historial).click(function () {
             <th id="th8" class="ancho" align="center" style = "font-weight: bold; color: white;"> Datos PVO</th>
             
         </tr>    `;
-    
-    
-            let number = 0;
-    
-            data.forEach(data => {
-    
-              number = number + 1;
-    
-              let variable = (data.novedad_id)
-              let fecha1 = (data.fecha)
-              let asesorname1 = (data.asesorname)
-              let placa1 = (data.placa)
-              let vinculadoname1 = (data.vinculadoname)
-              let subtipif1 = (data.subtipif)
-              let mensaje1 = (data.mensaje)
-              let correo1 = (data.correo)
-              
-              array_ids.push({ "novedad_id": variable.toString(), "placa": placa1, "mensaje":mensaje1})
-    
-              items2 += `<tr>
+
+
+          let number = 0;
+
+          data.forEach(data => {
+
+            number = number + 1;
+
+            let variable = (data.novedad_id)
+            let fecha1 = (data.fecha)
+            let asesorname1 = (data.asesorname)
+            let placa1 = (data.placa)
+            let vinculadoname1 = (data.vinculadoname)
+            let subtipif1 = (data.subtipif)
+            let mensaje1 = (data.mensaje)
+            let correo1 = (data.correo)
+
+            array_ids.push({ "novedad_id": variable.toString(), "placa": placa1, "mensaje": mensaje1 })
+
+            items2 += `<tr>
     
               <td class="angosto" align="center" style="border-right: 1px solid gray; padding-right: 0.2px"> ${number} </td>
               <td class="angosto" align="center" id='fecha${data.novedad_id}'> ${data.fecha} </td>
@@ -584,59 +585,59 @@ $(btn_historial).click(function () {
               <td class="ancho" align="justify" id='mensaje${data.novedad_id}'> ${data.mensaje} </td>
               
               </tr>    `;
-            })
-    
-    
-            ////////////////////////////////////////////////////////////////////
-    
-            document.getElementById("tabla_asesores").innerHTML = items2;
-                                
-              $(span_excel).click( function () {
-
-              window.alert("El archivo se descargará")
-
-              tableToExcel('tabla_asesores',"Historial PVO")
+          })
 
 
-              })
+          ////////////////////////////////////////////////////////////////////
 
-              
+          document.getElementById("tabla_asesores").innerHTML = items2;
+
+          $(span_excel).click(function () {
+
+            window.alert("El archivo se descargará")
+
+            tableToExcel('tabla_asesores', "Historial PVO")
 
 
-            
-            
-            namefunc();
+          })
 
 
-    
-          }
-          else {
 
-            
-            
-          }
-    
+
+
+
+          namefunc();
+
+
+
         }
-    
-    
-      });
+        else {
 
+
+
+        }
 
       }
 
-      else{
-        
-        if(window.confirm("¿Desea volver al menú principal?")){
 
-        window.location.reload()
-
-        }
+    });
 
 
-        else{
+  }
 
-        }
-      }
+  else {
+
+    if (window.confirm("¿Desea volver al menú principal?")) {
+
+      window.location.reload()
+
+    }
+
+
+    else {
+
+    }
+  }
 
 })
 

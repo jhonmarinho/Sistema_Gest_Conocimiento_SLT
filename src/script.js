@@ -4,53 +4,63 @@ var contadorlupa = 1
 
 
 $(document).ready(function () {
-  document.getElementById("formbuscadorweb").style.display='none';
-  document.getElementById("formbuscadorslt").style.display='none';
-  document.getElementById("modal_pvo").style.display='none';
-  
- // $("#contenedorchat").animate({ scrollTop: (body).height() }, 1000); // Scrollea hasta abajo de la página 
+  document.getElementById("formbuscadorweb").style.display = 'none';
+  document.getElementById("formbuscadorslt").style.display = 'none';
+  document.getElementById("modal_pvo").style.display = 'none';
+
+  // $("#contenedorchat").animate({ scrollTop: (body).height() }, 1000); // Scrollea hasta abajo de la página 
+
+  //click en span de placa
+
+  $("#spandocument").click(function () {
+
+    //Mostrando ventana de requisitos expedición de P.V.O
+    document.getElementById("modal_wrap1").style.display = '';
+
+  });
+
 
   //// Cuando da click en la lupa
 
 
-    $("#iconolupa").click(function(){
-      console.log(contadorlupa)
-      
-      if (contadorlupa===1){
+  $("#iconolupa").click(function () {
+    console.log(contadorlupa)
 
-      document.getElementById("formbuscadorweb").style.display='';
-      document.getElementById("formbuscadorslt").style.display='';
-      document.getElementById("buscadorslt").style.display='';
-      document.getElementById("buscadorslt").style.cssText='z-index: 0;';
-      document.getElementById("chatslt").style.display='none';
-      contadorlupa=0;
-    
-  }
+    if (contadorlupa === 1) {
+
+      document.getElementById("formbuscadorweb").style.display = '';
+      document.getElementById("formbuscadorslt").style.display = '';
+      document.getElementById("buscadorslt").style.display = '';
+      document.getElementById("buscadorslt").style.cssText = 'z-index: 0;';
+      document.getElementById("chatslt").style.display = 'none';
+      contadorlupa = 0;
+
+    }
 
     else {
 
-      
-      document.getElementById("formbuscadorweb").style.display='none';
-      document.getElementById("formbuscadorslt").style.display='none';
-      document.getElementById("buscadorslt").style.display='none';
-      document.getElementById("buscadorslt").style.cssText='z-index: -1;';
-      document.getElementById("chatslt").style.display='';
-      contadorlupa=1;
+
+      document.getElementById("formbuscadorweb").style.display = 'none';
+      document.getElementById("formbuscadorslt").style.display = 'none';
+      document.getElementById("buscadorslt").style.display = 'none';
+      document.getElementById("buscadorslt").style.cssText = 'z-index: -1;';
+      document.getElementById("chatslt").style.display = '';
+      contadorlupa = 1;
 
     }
-})
-  
+  })
 
 
 
- 
+
+
 
   //Cargar listado de asesores en el select asesorname al iniciar la web///////////////
-  
+
   // Validar que solo traiga asesores activos
-    let search7 = "SI";
-  console.log("¿Buscar únicamente asesores activos?: "+search7);
-  
+  let search7 = "SI";
+  console.log("¿Buscar únicamente asesores activos?: " + search7);
+
   $.ajax({
     url: 'consultarasesorname.php',
     data: { search7 },
@@ -73,15 +83,15 @@ $(document).ready(function () {
         document.getElementById("asesorname").innerHTML = itemNull;
       }
 
-    }      
-        
-      
-    });
-    
+    }
+
+
+  });
+
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+  $("#modal_wrap1").hide();
   $("#modal_wrap").hide();
   $("#btnSend").click(function () {
     var errores = "";
@@ -311,31 +321,31 @@ $subtipif.addEventListener("change", function () {
   switch (valor1) {
     case "18-EXPEDIR PVO":
       ////MOSTRAR VENTANA
-      
-      document.getElementById("modal_pvo").style.display='';
 
-      let telefono_cond=document.getElementById("phone").value
-      let nombreconductor=document.getElementById("conductorname").value
-      let correo_cond=document.getElementById("correo").value
-      let placa_cond=document.getElementById("placa").value
-      
-      if (telefono_cond !== ""){
-        document.getElementById("tlf_conduc").value=telefono_cond
+      document.getElementById("modal_pvo").style.display = '';
+
+      let telefono_cond = document.getElementById("phone").value
+      let nombreconductor = document.getElementById("conductorname").value
+      let correo_cond = document.getElementById("correo").value
+      let placa_cond = document.getElementById("placa").value
+
+      if (telefono_cond !== "") {
+        document.getElementById("tlf_conduc").value = telefono_cond
       }
 
-      if (nombreconductor !== "NULL"){
-        document.getElementById("name_conduc").value=nombreconductor
+      if (nombreconductor !== "NULL") {
+        document.getElementById("name_conduc").value = nombreconductor
       }
 
-      if (correo_cond !== ""){
-        document.getElementById("email_conduc").value=correo_cond
+      if (correo_cond !== "") {
+        document.getElementById("email_conduc").value = correo_cond
       }
 
-      if (placa_cond !== ""){
-        document.getElementById("placa_conduc").value=placa_cond
+      if (placa_cond !== "") {
+        document.getElementById("placa_conduc").value = placa_cond
       }
-      
-      
+
+
   }
 
 
@@ -480,60 +490,49 @@ $('#placa').keyup(function (e) {
   }
 });
 
-//click en span de placa
 
-$(document).ready(function () {
-  $("#validarplanilla").click(function () {
-
-    window.alert("it works")
-
-    //Mostrando ventana de requisitos expedición de P.V.O
-    document.getElementById("modal_wrap").style.display = '';
-
-  });
-});
 
 
 //Ocultando ventada de requisitos expedición de P.V.O al iniciar la página
 
 function ocultarPVO() {
-  $("#modal_wrap").hide(300);
+  $("#modal_wrap1").hide(300);
 }
 
 function ocultardatosPVO() {
   $("#modal_pvo").hide(300);
-  
+
 }
 
 function guardardatosPVO() {
-  
-  if(window.confirm("¿Confirma que desea guardar los datos ingresados?")){
+
+  if (window.confirm("¿Confirma que desea guardar los datos ingresados?")) {
 
     $("#modal_pvo").hide(300);
 
     let plantilla = "SOLICITUD PLANILLA DE VIAJE (PVO) " + "\n" +
-      "TELÉFONO CONDUCTOR: "+ $("#tlf_conduc").val() + "\n" +
-      "PLACA: "+  $("#placa_conduc").val() + "\n" +
+      "TELÉFONO CONDUCTOR: " + $("#tlf_conduc").val() + "\n" +
+      "PLACA: " + $("#placa_conduc").val() + "\n" +
       "NOMBRE CONDUCTOR: " + $("#name_conduc").val() + "\n" +
       "CORREO ELECTRÓNICO: " + $("#email_conduc").val() + "\n" +
       "ORIGEN: " + $("#origin_conduc").val() + "\n" +
       "DESTINO: " + $("#destination_conduc").val() + "\n" +
-      "NÚMERO USUARIOS: " + $("#number_passenger").val()  + "\n" +
+      "NÚMERO USUARIOS: " + $("#number_passenger").val() + "\n" +
       "FECHA SALIDA: " + $("#date1_conduc").val() + "\n" +
       "HORA VIAJE: " + $("#departure_conduc").val() + "\n" +
       "FECHA REGRESO: " + $("#date2_conduc").val() + "\n" +
       "IDA Y/O REGRESO: " + $("#selectdate2").val() + "\n" +
-      "CÉDULA CONTRATANTE: "  + $("#idcard_cont").val() + "\n" +
+      "CÉDULA CONTRATANTE: " + $("#idcard_cont").val() + "\n" +
       "NOMBRE CONTRATANTE: " + $("#name_cont").val() + "\n" +
       "CELULAR: " + $("#phone_cont").val() + "\n" +
       "DIRECCIÓN: " + $("#adress_cont").val() + "\n" +
       "MUNICIPIO: " + $("#city_cont").val() + "\n" +
-      "Observaciones: " + $("#note").val() 
+      "Observaciones: " + $("#note").val()
 
-    document.getElementById("mensaje").innerHTML=plantilla;
+    document.getElementById("mensaje").innerHTML = plantilla;
 
   }
-  
+
 
 }
 
@@ -601,25 +600,25 @@ $(document).ready(function () {
   let conduct_name = document.getElementById("conductorname");
 
   //...1) que se la consulta del conductor en el select principal
-  
-    modal_conduct.addEventListener("change", function () {
+
+  modal_conduct.addEventListener("change", function () {
     conduct_name.innerHTML = global_nameconduct;//variable definida globalmente extraida de la consulta SQL de AJAX 
 
     //..2) que consulte en el SAC la fecha de vencimiento de la Tarjeta de control
-    
+
     if ($('#conductornames').val() === "NULL") {
       document.getElementById("fecha_modal").value = "";
       document.getElementById("autoriz_modal").value = "";
       document.getElementById("saldosiesa_modal").value = "";
     }
 
-      let search4 = {
+    let search4 = {
       'NOMBRE': $('#conductornames').val(),
       'PLACA': $('#placa_modal').val()
     }
 
 
-    
+
 
     $.ajax({
       url: 'vigenciaTC.php',
@@ -628,28 +627,28 @@ $(document).ready(function () {
       success: function (response) {
 
         resultado = response;
-        console.log("El resultado que devuelve PHP es: " +resultado+" y es de tipo: "+typeof(resultado));
+        console.log("El resultado que devuelve PHP es: " + resultado + " y es de tipo: " + typeof (resultado));
         let jsonData = JSON.parse(resultado);
-        jsonEsVacio=jsonData.length;
+        jsonEsVacio = jsonData.length;
         console.log("El valor es:");
         console.log(jsonEsVacio);
         console.log(jsonEsVacio.val);
 
-          if(jsonEsVacio !== 0){            
-          
-            for (let item of jsonData) {
-            document.getElementById("fecha_modal").value = item.FECHA_VTO_TC;  
+        if (jsonEsVacio !== 0) {
+
+          for (let item of jsonData) {
+            document.getElementById("fecha_modal").value = item.FECHA_VTO_TC;
           }
-          }
+        }
 
-          else{
-            console.log("Entró por aquí")
-            document.getElementById("fecha_modal").value = "Sin resultados";  
-            }
+        else {
+          console.log("Entró por aquí")
+          document.getElementById("fecha_modal").value = "Sin resultados";
+        }
 
 
 
-        
+
 
 
       },
