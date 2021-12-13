@@ -353,7 +353,7 @@
                                 
               </select>
 
-              <label for="placa">Placa del vehículo* <span id="spandocument" class="fa fa-file-text-o"></span></label> 
+              <label for="placa">Placa del vehículo* <abbr title="Click aquí para consultar requisitos de expedición de PVO"> <span id="spandocument" class="fa fa-file-text-o"></span></abbr></label> 
               
               <input id="placa" maxlength="6" required name="placa" oninvalid=null autocomplete="off" pattern="[A-Z]{3}[0-9]{3}|[a-zA-Z]{3}[0-9]{3}" onkeydown="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()" />
               
