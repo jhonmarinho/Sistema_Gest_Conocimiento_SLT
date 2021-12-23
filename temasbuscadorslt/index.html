@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.tax-individual.com.co/wp-content/themes/tax-individual/img/logo.png?v=2">
+
     <title>Módulo Temas SLT</title>
         
    
@@ -15,6 +17,18 @@
 
 
 <body>
+
+    <div id=contenedor_add_box>
+        <div id="add_box">
+            <p id="parrafo_add">Añadir tema nuevo</p>
+            <textarea id="input_tema" spellcheck="false" class="input_add" maxlength="150" placeholder="✎ Ingrese aquí el título para el tema &#10 lim. 120 caracteres" autocomplete="off" type="text" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"></textarea>
+            <textarea id="input_descripcion" spellcheck="false" class="input_add" maxlength="6000" placeholder="Diligencie aquí la descripción del tema"autocomplete="off" type="text" value=""></textarea>
+            <button id="btn_add" > Guardar <span class="fa fa-save"></span></button>
+            <button id="btn_add_cerrar"> Cancelar <span class="fa fa-close"></span></button>
+        
+        </div>
+        </div>
+
 
     <header>
 
@@ -35,7 +49,7 @@
                
                 <div style="padding-top: 1%;font-size: 0.8em;" id="titulo_div"><h1 id="titulo">Módulo de temas SLT</h1></div>
 
-                    <div id="divbuscador"><input id="input_buscador" placeholder="Ingrese palabra o término clave a buscar..."> </input>
+                    <div id="divbuscador"><input id="input_buscador" spellcheck="false" placeholder="Ingrese palabra o término clave a buscar..."> </input>
                     <button id="btn_agregar">Agregar (<span id='add_tema_span' class="fa fa-plus"></span>)</button>
                     </div>
                 <table id="tabla_temas">
