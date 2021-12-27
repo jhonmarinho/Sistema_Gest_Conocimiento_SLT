@@ -510,6 +510,25 @@ function guardardatosPVO() {
 
     $("#modal_pvo").hide(300);
 
+
+    ////////////////////////////////////////////////////////////////
+
+    function tConvert (time) {
+      // Check correct time format and split into components
+      time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    
+      if (time.length > 1) { // If time format correct
+        time = time.slice (1);  // Remove full string match value
+        time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+        time[0] = +time[0] % 12 || 12; // Adjust hours
+      }
+      return time.join (''); // return adjusted time or original string
+    }
+
+    let hora_salida_viaje = tConvert($("#departure_conduc").val())
+
+    ////////////////////////////////////////////////////////////////
+
     let plantilla = "SOLICITUD PLANILLA DE VIAJE (PVO) " + "\n" +
       "TELÉFONO CONDUCTOR: " + $("#tlf_conduc").val() + "\n" +
       "PLACA: " + $("#placa_conduc").val() + "\n" +
@@ -519,7 +538,7 @@ function guardardatosPVO() {
       "DESTINO: " + $("#destination_conduc").val() + "\n" +
       "NÚMERO USUARIOS: " + $("#number_passenger").val() + "\n" +
       "FECHA SALIDA: " + $("#date1_conduc").val() + "\n" +
-      "HORA VIAJE: " + $("#departure_conduc").val() + "\n" +
+      "HORA VIAJE: " + hora_salida_viaje + "\n" +
       "FECHA REGRESO: " + $("#date2_conduc").val() + "\n" +
       "IDA Y/O REGRESO: " + $("#selectdate2").val() + "\n" +
       "CÉDULA CONTRATANTE: " + $("#idcard_cont").val() + "\n" +
