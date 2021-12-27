@@ -45,6 +45,13 @@ $("#btn_ingresar").click(function () {
 
 
                     }
+                    
+                    else if (validarusuario.match(/buscadorslt.*/)) {
+
+                        window.alert("¡Bienvenid@ "+data[0]['nombre']+" "+data[0]['apellidos']+"!")
+                        location.href = "../temasbuscadorslt/index.html";
+
+                    }
 
                     else{
 
