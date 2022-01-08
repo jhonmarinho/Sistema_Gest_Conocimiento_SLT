@@ -513,16 +513,16 @@ function guardardatosPVO() {
 
     ////////////////////////////////////////////////////////////////
 
-    function tConvert (time) {
+    function tConvert(time) {
       // Check correct time format and split into components
-      time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-    
+      time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
       if (time.length > 1) { // If time format correct
-        time = time.slice (1);  // Remove full string match value
+        time = time.slice(1);  // Remove full string match value
         time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
         time[0] = +time[0] % 12 || 12; // Adjust hours
       }
-      return time.join (''); // return adjusted time or original string
+      return time.join(''); // return adjusted time or original string
     }
 
     let hora_salida_viaje = tConvert($("#departure_conduc").val())
@@ -652,11 +652,44 @@ $(document).ready(function () {
         console.log("El valor es:");
         console.log(jsonEsVacio);
         console.log(jsonEsVacio.val);
+        let fecha_final1=''
 
         if (jsonEsVacio !== 0) {
 
           for (let item of jsonData) {
-            document.getElementById("fecha_modal").value = item.FECHA_VTO_TC;
+
+            var FechaEspaniol = item.FECHA_VTO_TC
+            
+
+            var mes_english = FechaEspaniol.slice(3, -3)
+            console.log(mes_english)
+            console.log(typeof(mes_english))
+
+            switch (mes_english) {
+
+              case "JAN":
+                FechaEspaniol= FechaEspaniol.replace("JAN","ENE")
+                console.log("epa"+FechaEspaniol)  
+                break;       
+
+              case "APR":
+
+                FechaEspaniol=FechaEspaniol.replace("APR","ABR")
+                console.log("epa"+FechaEspaniol)  
+                break;
+
+              case "DEC":
+
+                FechaEspaniol=FechaEspaniol.replace("DEC","DIC")
+                console.log("epa"+FechaEspaniol)  
+                break;
+                
+            }
+
+            console.log(FechaEspaniol)
+            console.log(typeof (FechaEspaniol))
+
+            document.getElementById("fecha_modal").value = FechaEspaniol;
           }
         }
 
