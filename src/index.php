@@ -349,7 +349,7 @@
               <label for="asesorname">Nombre Asesor *</label>
 
               <select id="asesorname" name="asesorname" class="custom-select" required>
-                <option disabled selected>--Seleccione--</option>
+                <option value="NULL" disabled selected>--Seleccione--</option>
                                 
               </select>
 

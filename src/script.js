@@ -662,26 +662,27 @@ $(document).ready(function () {
             
 
             var mes_english = FechaEspaniol.slice(3, -3)
-            console.log(mes_english)
-            console.log(typeof(mes_english))
 
             switch (mes_english) {
 
               case "JAN":
                 FechaEspaniol= FechaEspaniol.replace("JAN","ENE")
-                console.log("epa"+FechaEspaniol)  
                 break;       
 
               case "APR":
 
-                FechaEspaniol=FechaEspaniol.replace("APR","ABR")
-                console.log("epa"+FechaEspaniol)  
+                FechaEspaniol=FechaEspaniol.replace("APR","ABR") 
                 break;
+
+              
+                case "AUG":
+
+                  FechaEspaniol=FechaEspaniol.replace("AUG","AGO") 
+                  break;
 
               case "DEC":
 
                 FechaEspaniol=FechaEspaniol.replace("DEC","DIC")
-                console.log("epa"+FechaEspaniol)  
                 break;
                 
             }
