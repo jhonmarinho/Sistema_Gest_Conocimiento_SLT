@@ -37,6 +37,14 @@ $("#btn_ingresar").click(function () {
                     var validarusuario=data[0]['usuario']
                     console.log(validarusuario)
 
+                    if(validarusuario.match('gperez') || validarusuario.match('lcano')){
+
+                            window.alert("¡Bienvenid@ "+data[0]['nombre']+" "+data[0]['apellidos']+"!")
+                        window.location.href = "http://localhost/formconductores/reportes";
+
+                    }
+
+
                     if (validarusuario.match(/pvo.*/)){
 
 
