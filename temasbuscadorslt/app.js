@@ -90,6 +90,7 @@ function cargartemas() {
     type: 'POST',
     success: function (response) {
 
+
       if (response !== "[]") {
         data = JSON.parse(response);
 

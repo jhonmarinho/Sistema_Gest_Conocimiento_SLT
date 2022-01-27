@@ -660,7 +660,6 @@ $(document).ready(function () {
 
             var FechaEspaniol = item.FECHA_VTO_TC
             
-
             var mes_english = FechaEspaniol.slice(3, -3)
 
             switch (mes_english) {
