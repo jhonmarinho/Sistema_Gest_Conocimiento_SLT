@@ -45,7 +45,7 @@ $("#btn_ingresar").click(function () {
                     }
 
 
-                    if (validarusuario.match(/pvo.*/)){
+                    else if (validarusuario.match(/pvo.*/)){
 
 
                         window.alert("¡Bienvenid@ "+data[0]['nombre']+" "+data[0]['apellidos']+"!")
@@ -63,7 +63,6 @@ $("#btn_ingresar").click(function () {
 
                     else{
 
-                        
                         window.alert("¡Bienvenid@ "+data[0]['nombre']+" "+data[0]['apellidos']+"!")
                         location.href = "../ingresoasesores/ingreso_asesores.html";
 

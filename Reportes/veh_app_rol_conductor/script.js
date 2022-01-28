@@ -22,7 +22,9 @@ $.ajax({
          
           const divElemento = document.getElementById("tabla_temas")      
           
-          const row_table = `<tr>
+          const row_table = `<tbody>
+          
+          <tr>
   
             <td  > ${number} </td>
             <td class="angosto"  > ${data.PLACA} </td>
@@ -37,7 +39,7 @@ $.ajax({
             <td class="angosto"  > ${data.CONDUCE} </td>
             <td class="angosto"  > ${data.TELEFONO} </td>
             <td class="angosto"  > ${data.CELULAR} </td>
-                        </tr>    `;
+                        </tr>    </tbody>`;
 
             divElemento.insertAdjacentHTML("beforeend",row_table)
            
@@ -86,12 +88,29 @@ async function borrar(){
 }
 
 //Exportar a excel
-$(btn_agregar).click(function () {
 
-    window.alert("El archivo se descargará")
+btn_agregar.onclick = () => {
 
-    tableToExcel("tabla_temas", "Historial programaciones")
+      if(window.confirm("¿Realmente desea descargar el archivo?")){
+
+             //tableToExcel("tabla_temas", "Historial programaciones")
+            
+            function Export() {
+            $("#tabla_temas").table2excel({
+
+              name: "Worksheet",
+              filename: "SomeFile", 
+              fileext: ".xlsx"
+
+            });
+          }
+
+             Export();
+  
+
+      }
+
+ 
+};
 
 
-
-})
