@@ -388,15 +388,7 @@ $tipif.addEventListener("change", function () {
 });
 
 //
-const btnToggle = document.querySelector(".toggle-btn");
-btnToggle.addEventListener("click", function () {
-  document.getElementById("sidebar").classList.toggle("active");
-  document.getElementById("twitter").classList.toggle("active");
-  document.getElementById("rightsidepage").classList.toggle("active");
-  document.getElementById("buscadorweb").classList.toggle("active");
-  document.getElementById("buscadorslt").classList.toggle("active");
 
-});
 
 //<!-- Script para captar la placa y nombre del conductor y pedir al servidor de vuelta el correo electrónico-->
 let conduct_name = document.getElementById("conductorname")
@@ -815,13 +807,12 @@ $('#textoabuscarslt').keyup(function (e) {
           console.log(data);
           data.forEach(data => {
             template +=
-              `     ➤ ${data.tema}:
+              `➤ ${data.tema}:
 
 ${data.descripcion}
+________________________________________
 
-⸻⸻⸻⸻⸻⸻⸻
-
-      `;
+`;
           })
           $('#contenedorrespuestas').html(template);
         }

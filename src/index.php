@@ -128,7 +128,7 @@
     <label id="lbl_name_cont"for="name_cont">Nombre del contratante:</label>
     <input style="font-size:14px" id="name_cont"></input>
 
-    <label id="lbl_phone_cont"for="phone_cont">Teléfono del contratante:</label>
+    <label id="lbl_phone_cont"for="phone_cont">Celular del contratante:</label>
     <input id="phone_cont"></input>
 
     <label id="lbl_adress_cont"for="adress_cont">Dirección:</label>
@@ -193,143 +193,15 @@
 
   <!--BUSCADOR WEB-->
   <div class="contenedor">
-    
-    <div id="buscadorweb" class="">
-    
-    <div id="iconolupa" <span id="spanlupa" class="fa fa-search"></span>
-            </div>
-          
-          
-      
-      
-      <FORM  method=GET action="https://www.google.com/search" target="_blank">
-        <fieldset id="formbuscadorweb" >
-          <div id="titulobuscadorweb" class="">
-            <a> BUSCADOR WEB</a>
-            
-          </div>
-          <input type=hidden name=ie value=UTF-8 />
-          <input type=hidden name=oe value=UTF-8 />
-
-          <INPUT TYPE=text id="textoabuscar" placeholder="Término o palabra clave a buscar..." name="q" value="" size="30" autocomplete="off" spellcheck="false" />
-          <font size=-2>
-
-            <input type=hidden name=domains value="http://www.tax-individual.com.co" target="_blank" /><br>
-            <input type=radio class="eninternet" name=sitesearch value="" /> EN GOOGLE MAPS</br>
-            <input type=radio class="entaxindividual" name=sitesearch value="http://www.tax-individual.com.co" target="_blank" checked /> EN TAX-INDIVIDUAL.COM.CO
-            <input type=submit id="botonbuscarweb" name=btnG VALUE="BUSCAR" class= />
 
 
-          </font>
-        </fieldset>
-      </FORM>
-
-
-
-      <!--- FORM CHAT-->
-
-    <div id="chatslt" class="">
-        
-        <FORM >
-          <fieldset id=chatslt2 > 
-          <a style=" font-size:18px;
-            font-weight: 700;
-            color: rgb(0, 0, 0);
-            padding-top: 1%;;">CHAT SLT <span class="fa fa-comments-o"></span> <br></a>
-
-            <div  id="contenedorchat">
-</div>
-
-            <input type="text" spellcheck="false" maxlength="280"  placeholder="Escriba aquí su mensaje..." autocomplete="off" id="inputchat"> </input>
-            <button id= "sendchat"> Enviar <span class="fas fa-paper-plane"></span></button>
-          </fieldset>
-          
-        </FORM>
-
-      </div>
-
-
-    </div>
-
-
-    
-
-
-    <!--BUSCADOR INTERNO SLT-->
-
-    <div class="contenedor2">
-      <div id="buscadorslt" class="">
-        <FORM >
-          <fieldset id=formbuscadorslt >
-            <div id="titulobuscadorslt" class="titulo">
-              <a> PREGUNTAS FRECUENTES SLT</a>
-              <div id="iconopregunta" <span class="fa fa-question-circle"></span>
-              </div>
-              <INPUT TYPE=text id="textoabuscarslt" placeholder="Término clave a buscar..." name="q" value="" size="30" autocomplete="off" spellcheck="false" />
-              <font size=-2>
-
-              
-
-            </div>
-            <h3>Resultados de la búsqueda:</h3>
-            <textarea  margin="0 px" rows="16"spellcheck="false" readonly="readonly" id="contenedorrespuestas">
-
-</textarea>
-
-            
-            <!-- Aquí ponemos los párrafos que se obtendrán de la búsqueda-->
-            <div id="respuestasbuscarslt">
-              <div id="titulorespuestas>" class="title">
-                <a> Resultados de la búsqueda: </a>
-            </font>
-          </fieldset>
-        </FORM>
-
-        
-
-
-    </div>
-    <div class="contenedor">
-      <!--Twitter-->
-      <div id="twitter" class="">
-        <a class="twitter-timeline" data-width="420" data-height="850" href="https://twitter.com/sttmed?ref_src=twsrc%5Etfw">Tweets by sttmed</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-      <div id="sidebar" class="">
-        <div class="toggle-btn">
-          <span>&#9776;</span>
-          <ul>
-            <li>
-              <img id="logotax" src="https://www.tax-individual.com.co/wp-content/themes/tax-individual/img/logo.png?v=2" alt="Logotipo" />
-            </li>
-            <a href="../Login" target="_blank">
-              <li>PORTAL ADMINISTRATIVO</li>
-            </a>
-            <a href="https://taxindividual.sharepoint.com/:f:/g/EklJPqIlfP1NlSDLAnSYURIBW3RWtsQL3QGdjf7wDx6d1w?e=g0hRIc" target="_blank">
-              <li>INSTRUCTIVOS</li>
-            </a>
-            <a href="https://actualizadatos.tax-individual.com.co/" target="_blank">
-              <li>ACTUALIZACIÓN DE DATOS</li>
-            </a>
-            <a href="https://docs.google.com/spreadsheets/d/1rJ5e6K2_cj7zMx4BGs5ChumYwjcDES9e14GIOH8h3sk/edit#gid=1669431343" target="_blank">
-              <li>DESEMPEÑO</li>
-            </a>
-          </ul>
-        </div>
-      </div>
-      <div id="derechosdiv" >
-        <p id="derechos">© 2021 - Tax Individual, ¡Para Usted! │  <a id="politicadatos" href="https://www.tax-individual.com.co/proteccion-datos-personales/">     <u>Política de protección de Datos Personales</u></a> </p>
-        
-      </div>
-      <div id="rightsidepage">
-        <section class="form_wrap">
+  <section class="form_wrap">
           <section class="contact_info">
             <section class="info_tittle">
               <span class="fa fa-user-circle"></span>
               <h2>
-                SISTEMA DE GESTIÓN DEL<br />
-                CONOCIMIENTO<br />
-                SLT
+                SISTEMA DE GESTIÓN <br /> 
+                DEL CONOCIMIENTO SLT
               </h2>
             </section>
             <section class="info_items">
@@ -391,7 +263,121 @@
             </div>
           </form>
         </section>
+
+    
+    <div id="buscadorweb" class="">
+    
+    <div id="iconolupa" <span id="spanlupa" class="fa fa-search"></span>
+            </div>
+          
+
+
+          <!--BUSCADOR INTERNO SLT-->
+
+          <div id="buscadorslt" class="">
+          <FORM  method=GET action="https://www.google.com/search" target="_blank">
+        <fieldset id="formbuscadorweb" >
+          <div id="titulobuscadorweb" class="">
+            <a> BUSCADOR WEB</a>
+            
+          </div>
+          <input type=hidden name=ie value=UTF-8 />
+          <input type=hidden name=oe value=UTF-8 />
+
+          <INPUT TYPE=text id="textoabuscar" placeholder="Término o palabra clave a buscar..." name="q" value="" size="30" autocomplete="off" spellcheck="false" />
+          <font size=-2>
+
+            <input type=hidden name=domains value="http://www.tax-individual.com.co" target="_blank" /><br>
+            <input type=radio class="eninternet" name=sitesearch value="" /> EN GOOGLE MAPS</br>
+            <input type=radio class="entaxindividual" name=sitesearch value="http://www.tax-individual.com.co" target="_blank" checked /> EN TAX-INDIVIDUAL.COM.CO
+            <input type=submit id="botonbuscarweb" name=btnG VALUE="BUSCAR" class= />
+
+
+          </font>
+        </fieldset>
+      </FORM>
+        <FORM >
+          <fieldset id=formbuscadorslt >
+            <div id="titulobuscadorslt" class="titulo">
+              <a> PREGUNTAS FRECUENTES SLT</a>
+              <div id="iconopregunta" <span class="fa fa-question-circle"></span>
+              </div>
+              <INPUT TYPE=text id="textoabuscarslt" placeholder="Término clave a buscar..." name="q" value="" size="30" autocomplete="off" spellcheck="false" />
+              <font size=-2>
+
+              
+
+            </div>
+            <h3>Resultados de la búsqueda:</h3>
+            <textarea  margin="0 px" rows="16"spellcheck="false" readonly="readonly" id="contenedorrespuestas">
+
+</textarea>
+
+            
+            <!-- Aquí ponemos los párrafos que se obtendrán de la búsqueda-->
+            <div id="respuestasbuscarslt">
+              <div id="titulorespuestas>" class="title">
+                <a> Resultados de la búsqueda: </a>
+            </font>
+          </fieldset>
+        </FORM>
+
+        
+
+
+    </div>
+
+      <!--- FORM CHAT-->
+
+    <div id="chatslt" class="">
+        
+        <FORM >
+          <fieldset id=chatslt2 > 
+          <a style=" margin-left:4%;font-size:18px;
+            font-weight: 700;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;">CHAT SLT <span class="fa fa-comments-o"></span> <br></a>
+
+            <div  id="contenedorchat">
+</div>
+
+            <input type="text" spellcheck="false" maxlength="280"  placeholder="Escriba aquí su mensaje..." autocomplete="off" id="inputchat"> </input>
+            <button id= "sendchat"> Enviar <span class="fas fa-paper-plane"></span></button>
+          </fieldset>
+          
+        </FORM>
+
       </div>
+
+
+    </div>
+
+    <div>
+
+      <div id="" class="sidebar">
+
+          <ul>
+            <li>
+              <img id="logotax" src="https://www.tax-individual.com.co/wp-content/themes/tax-individual/img/logo.png?v=2" alt="Logotipo" />
+            </li>
+            <a href="../Login" target="_blank">
+              <li>PORTAL ADMINISTRATIVO</li>
+            </a>
+            <a href="https://taxindividual.sharepoint.com/:f:/g/EklJPqIlfP1NlSDLAnSYURIBW3RWtsQL3QGdjf7wDx6d1w?e=g0hRIc" target="_blank">
+              <li>INSTRUCTIVOS</li>
+            </a>
+            <a href="https://actualizadatos.tax-individual.com.co/" target="_blank">
+              <li>ACTUALIZACIÓN DE DATOS</li>
+            </a>
+            <a href="https://docs.google.com/spreadsheets/d/1rJ5e6K2_cj7zMx4BGs5ChumYwjcDES9e14GIOH8h3sk/edit#gid=1669431343" target="_blank">
+              <li>DESEMPEÑO</li>
+            </a>
+          </ul>
+      </div>
+
+      
+
+
       
 
 
@@ -407,6 +393,11 @@
 
       <!-- Icono de equis roja para errores-->
       <i class="fas fa-window-close"></i>
+
+      <div class="derechosdiv" >
+        <a id="politicadatos" href="https://www.tax-individual.com.co/proteccion-datos-personales/">      <u>© 2021 - Tax Individual, ¡Para Usted! │Política de protección de Datos Personales</u> </a>
+        
+      </div>
       
 </body>
 
