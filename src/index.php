@@ -48,6 +48,9 @@
 
 <body>
 
+
+
+
 <!--Ventana de ingreso de datos de expedición PVO:-->
 
 <div id= "modal_pvo" class="modal_wrap">
@@ -194,7 +197,7 @@
   <!--BUSCADOR WEB-->
   <div class="contenedor">
 
-
+  <div id="div_texto_movil"><marquee id="movil_txt">Este texto se mueve de derecha a izquierda</marquee></div>
   <section class="form_wrap">
           <section class="contact_info">
             <section class="info_tittle">
@@ -221,7 +224,7 @@
               <label for="asesorname">Nombre Asesor *</label>
 
               <select id="asesorname" name="asesorname" class="custom-select" required>
-                <option value="NULL" disabled selected>--Seleccione--</option>
+                <option disabled selected>--Seleccione--</option>
                                 
               </select>
 

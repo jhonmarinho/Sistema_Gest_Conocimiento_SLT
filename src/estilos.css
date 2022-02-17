@@ -4,11 +4,24 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 15% 62% 23%;
-  grid-template-rows: 96% 4% ;
-  grid-template-areas:"sidebar form_wrap buscadorweb"
+  grid-template-rows: 3% 95%  2%;
+  grid-template-areas:"texto_movil texto_movil texto_movil"
+                      "sidebar form_wrap buscadorweb"
                       "derechosdiv derechosdiv derechosdiv";
  
   
+}
+
+#div_texto_movil{
+
+  background-color: black;
+  color: white;
+  font-family: "Century Gothic";
+  font-weight:700;
+  font-size:70%;
+  grid-area:texto_movil;
+  margin:0px;
+
 }
 
 #btnSend{

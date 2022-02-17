@@ -1,9 +1,17 @@
-
 var global_nameconduct = ""
 var contadorlupa = 1
 
 
 $(document).ready(function () {
+
+  var hoy=new Date();
+  var fecha = hoy.getDate() + '-' + ( hoy.getMonth() + 1 ) + '-' + hoy.getFullYear();
+  var hora = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+  var fechaYHora = fecha + ' ' + hora;
+  var mensaje_movil='➤ La fecha y hora actual del sistema son: '+ ' Fecha: ' + fecha + ',  Hora: '+ hora;
+
+
+  document.getElementById("movil_txt").innerHTML=mensaje_movil;
   document.getElementById("formbuscadorweb").style.display = 'none';
   document.getElementById("formbuscadorslt").style.display = 'none';
   document.getElementById("modal_pvo").style.display = 'none';
@@ -219,7 +227,9 @@ $(document).ready(function () {
     // Mostrar mensaje si hay errores únicamente (modalwrap)
 
     if ((errores == "") == false) {
+
       window.alert("⚠ " + "Se han encontrado los siguientes errores: \n\n" + errores)
+      event.preventDefault();
     }
 
 
@@ -261,6 +271,8 @@ let subtipificaciones = [
   "4-USUARIO NO SALE/LLAMAR USUARIO",
   "5-SOLICITA MAS TIEMPO PARA RECOGER",
   "6-SOLICITA CANCELAR SERVICIO",
+  "7-CODIGO DESCONOCIDO",
+  "8-PASAJERO A BORDO",
   "7-GPS NO CONECTA/ERROR GPS",
   "8-APP NO CONECTA/NO DEJA REGISTRAR",
   "9-ERROR EN ZONA GPS/SALTOS DE ZONA",
@@ -324,7 +336,7 @@ $subtipif.addEventListener("change", function () {
 
       document.getElementById("modal_pvo").style.display = '';
 
-      let telefono_cond = document.getElementById("phone").value
+      let telefono_cond = document.getElementById("phone").innerHTML=""
       let nombreconductor = document.getElementById("conductorname").value
       let correo_cond = document.getElementById("correo").value
       let placa_cond = document.getElementById("placa").value
@@ -359,30 +371,30 @@ $tipif.addEventListener("change", function () {
   let valor = $tipif.value;
   switch (valor) {
     case "1 NOVEDADES DURANTE LA PRESTACION DEL SERVICIO":
-      recortarx(subtipificaciones, 0, 7, $subtipif);
+      recortarx(subtipificaciones, 0, 9, $subtipif);
       break;
     case "2 SOPORTE APP CONDUCTOR":
-      recortarx(subtipificaciones, 7, 12, $subtipif);
+      recortarx(subtipificaciones, 9, 14, $subtipif);
       break;
     case "3 VALES":
-      recortarx(subtipificaciones, 12, 18, $subtipif);
+      recortarx(subtipificaciones, 14, 20, $subtipif);
       break;
     case "4 PVO":
-      recortarx(subtipificaciones, 18, 23, $subtipif);
+      recortarx(subtipificaciones, 20, 25, $subtipif);
       break;
 
     case "5 REPORTE DE ACCIDENTES O INCIDENTES":
-      recortarx(subtipificaciones, 23, 27, $subtipif);
+      recortarx(subtipificaciones, 25, 29, $subtipif);
       break;
 
     case "6 CONSULTA ADMINISTRATIVA":
-      recortarx(subtipificaciones, 27, 34, $subtipif);
+      recortarx(subtipificaciones, 29, 36, $subtipif);
       break;
     case "7 COMENTARIO/SUGERENCIA/FELICITACION":
-      recortarx(subtipificaciones, 34, 37, $subtipif);
+      recortarx(subtipificaciones, 36, 39, $subtipif);
       break;
     case "8 ACTUALIZACION DE DATOS":
-      recortarx(subtipificaciones, 37, 39, $subtipif);
+      recortarx(subtipificaciones, 39, 40, $subtipif);
       break
   }
 });
@@ -540,7 +552,8 @@ function guardardatosPVO() {
       "MUNICIPIO: " + $("#city_cont").val() + "\n" +
       "Observaciones: " + $("#note").val()
 
-    document.getElementById("mensaje").innerHTML = plantilla;
+    $('#mensaje').val(plantilla)
+    
 
   }
 

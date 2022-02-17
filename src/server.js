@@ -21,17 +21,34 @@ const formateadorfecha = new Intl.DateTimeFormat('es-MX', { dateStyle: 'medium',
 					
 					
 					let data = JSON.parse(response);
-					console.log(response)
+					console.log("oe llave: "+typeof(data));
+					let ultimosChats = data.slice(data.length-5, data.length);
+					ultimosChats = ultimosChats.reverse();
+
+					console.log(data);
+					console.log(ultimosChats);
+					console.log(typeof(ultimosChats));
+
 					let items = '<div class="system_msg" style="color:rgb(43, 43, 43)">¡Bienvenido al Chat SLT!</div>';
-					data.forEach(data => {
+					let items_txt_movil = 'Mensajes recientes chat SLT: ';
+					
+					data.forEach(data => {				
 		
 					  items += `<p style="max-width=100%; word-break: break-all;margin-top:1%;margin-bottom:0px">
 					  <span style="max-width=100%; margin-bottom:0px;word-break: break-all;" class="user_name"
 					   >${data.asesorname}</span><p  class="user_message">
 					 ${data.msg}</p><p class="time_stamp" >${data.time_stamp.date}</p></p> `
 					})
+
+					ultimosChats.forEach(data => {
+
+						items_txt_movil += ` ${data.asesorname} (${data.time_stamp.date}): ${data.msg} |  `;
+
+
+					})
 					
 					document.getElementById("contenedorchat").innerHTML = items;
+					document.getElementById("movil_txt").innerHTML = items_txt_movil;
 			
 					
 			
