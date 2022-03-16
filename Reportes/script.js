@@ -36,6 +36,12 @@ window.location.href = "http://localhost/formconductores/reportes/veh_Activos/";
 
 }
 
+function reporte_accidentes(){
+
+window.location.href = "http://localhost/formconductores/reportes/accidentes_transito/build/";
+
+}
+
 
 function veh_App_rol_conduct(){
 
